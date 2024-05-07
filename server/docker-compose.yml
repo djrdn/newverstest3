@@ -1,11 +1,11 @@
-version: '3' # версия синтаксиса
+version: '3' 
 services:
-  express-app: # Сервер Express
+  express-app:
     build: .
     ports:
       - '3000:3000'
-  react-app: # React-приложение
-    build: ../client # Путь к вашему React-приложению относительно корня вашего проекта
+  react-app:
+    build: ../client 
     ports:
-      - '80:80' # Порт, на котором будет доступно ваше React-приложение
-      - '8000:8000' # Порт, на котором будет доступно ваше React-приложение
+      - '80:80' 
+      - '8000:8000' 
