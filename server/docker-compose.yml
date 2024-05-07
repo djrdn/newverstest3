@@ -1,17 +1,11 @@
-version: '3'
+version: '3' # версия синтаксиса
 services:
- express-server: # Сервер Express
+  express-app: # Сервер Express
     build: .
     ports:
       - '3000:3000'
-    depends_on:
-      - db
-    environment:
-      DATABASE_URL: "mongodb://admin:admin@db:27018/mydatabase?authSource=admin&directConnection=true"
- db: # База данихх
-    image: prismagraphql/mongo-single-replica:5.0.3
+  react-app: # React-приложение
+    build: ../client # Путь к вашему React-приложению относительно корня вашего проекта
     ports:
-      - '27018:27017'
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: admin
+      - '80:80' # Порт, на котором будет доступно ваше React-приложение
+      - '8000:8000' # Порт, на котором будет доступно ваше React-приложение
