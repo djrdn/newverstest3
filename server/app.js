@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const fs = require("fs");
 const cors = require("cors");
+const buildPath = path.join(__dirname, "../client/build");
 
 const app = express();
 require("dotenv").config();
