@@ -5,7 +5,6 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const fs = require("fs");
 const cors = require("cors");
-const buildPath = path.join(__dirname, "../client/build");
 
 const app = express();
 require("dotenv").config();
@@ -25,6 +24,10 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Підключення маршрутів
 app.use("/api", require("./routes"));
+
+// Обслуживание статических файлов из собранного клиентского приложения
+const buildPath = path.join(__dirname, "../client/build");
+app.use(express.static(buildPath));
 
 // Створення каталогу 'uploads', якщо він не існує
 if (!fs.existsSync("uploads")) {
