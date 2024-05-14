@@ -8,7 +8,7 @@ const { LikeController } = require("../controllers");
 const { FollowController } = require("../controllers");
 const { authenticateToken } = require("../middleware/auth");
 
-const uploadDestination = "uploads"; // multer будет всё сохранять сюда
+const uploadDestination = "uploads";
 
 // Показуємо де зберігати файли
 const storage = multer.diskStorage({

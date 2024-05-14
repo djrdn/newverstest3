@@ -22,6 +22,6 @@ const baseQueryWithRetry = retry(baseQuery, { maxRetries: 0 })
 export const api = createApi({
   reducerPath: "splitApi",
   baseQuery: baseQueryWithRetry,
-  refetchOnMountOrArgChange: true, // отключаем функцию хеширования которая мешает отправлять запросы несколько раз
+  refetchOnMountOrArgChange: true, // вимикаємо функцію хешування
   endpoints: () => ({}),
 })

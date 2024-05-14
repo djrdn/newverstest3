@@ -54,7 +54,7 @@ export const CreatePost = () => {
         endContent={<IoMdCreate />}
         type="submit"
       >
-        Добавить пост
+        Додати пост
       </Button>
     </form>
   )

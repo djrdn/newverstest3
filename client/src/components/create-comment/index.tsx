@@ -57,7 +57,7 @@ export const CreateComment = () => {
         endContent={<IoMdCreate />}
         type="submit"
       >
-        Ответить
+        Відповісти
       </Button>
     </form>
   )
